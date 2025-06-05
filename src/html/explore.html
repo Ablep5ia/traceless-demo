@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/explore.css">
+    <link rel="stylesheet" href="../css/global-styles/header.css">
+    <link rel="stylesheet" href="../css/global-styles/nav.css">
+    <link rel="stylesheet" href="../css/global-styles/colors.css">
+    <link rel="stylesheet" href="../css/global-styles/fonts.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <title>Traceless</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="scrollable">
+            <div id="header">
+                <img src="../assets/logo/LogoGreenSmallText.svg" alt="Icon" class="logo">
+            </div>
+
+            <div class="main">
+                <h1>Explore</h1>
+                <div class="explore-section">
+                    <h2>Green Routes</h2>
+
+                    <div class="explore-card-full" id="greenRoutesCard">
+                        <div class="explore-card-header" id="greenRoutesToggle">
+                            <div class="explore-icon">
+                                <img src="../assets/icons/Nav/Green/CalculateGreen.svg" alt="Green Route Icon">
+                            </div>
+                            <div class="explore-text">Smart, low impact travel routes you can follow</div>
+                            <div class="explore-arrow" id="greenRoutesArrow">
+                                <img src="../assets/icons/Arrows/Gray/ArrowDownGray.svg" alt="Arrow">
+                            </div>
+                        </div>
+
+                        <div class="green-routes-inner" id="greenRoutesDropdown">
+                            <div class="route-title">Brussels to Amsterdam</div>
+                            <div id="map" class="display-map"></div>
+                            <div class="trip-stats">
+                                <div class="stat-item">
+                                    <img src="../assets/icons/Other/time.svg" alt="Time icon" />
+                                    <span>1 hr 50 min</span>
+                                </div>
+                                <div class="stat-item">
+                                    <img src="../assets/icons/Other/cost.svg" alt="Price icon" />
+                                    <span>from €35</span>
+                                </div>
+                                <div class="stat-item">
+                                    <img src="../assets/icons/Other/carbon.svg" alt="CO2 icon" />
+                                    <span>96% less</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="explore-section">
+                    <h2>Bike sharing</h2>
+                    <button class="explore-card">
+                        <div class="explore-icon">
+                            <img src="../assets/icons/Vehicles/Bike/BikeGreenCircle.svg" alt="Bike Icon">
+                        </div>
+                        <div class="explore-text">Check local apps for nearby bikes</div>
+                        <div class="explore-arrow">
+                            <img src="../assets/icons/Arrows/Gray/ArrowRightGray.svg" alt="Arrow">
+                        </div>
+                    </button>
+                </div>
+
+                <div class="explore-section">
+                    <h2>Smart swaps</h2>
+                    <button class="explore-card">
+                        <div class="explore-icon">
+                            <img src="../assets/icons/Vehicles/train/TrainGreenCircle.svg">
+                        </div>
+                        <div class="explore-text">Make smart swaps to lower your impact</div>
+                        <div class="explore-arrow">
+                            <img src="../assets/icons/Arrows/Gray/ArrowRightGray.svg" alt="Arrow">
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="nav">
+            <a href="../index.html" class="nav-item">
+                <img src="../assets/icons/Nav/Green/HomeGreen.svg" alt="Home" class="nav-icon">
+            </a>
+            <a href="explore.html" class="nav-item">
+                <img src="../assets/icons/Nav/Orange/ExploreOrange.svg" alt="Explore" class="nav-icon">
+            </a>
+            <a href="plan.html" class="nav-item">
+                <img src="../assets/icons/Nav/Green/CalculateGreen.svg" alt="Settings" class="nav-icon">
+            </a>
+            <a href="summary.html" class="nav-item">
+                <img src="../assets/icons/Nav/Green/SummaryGreen.svg" alt="Settings" class="nav-icon">
+            </a>
+            <a href="settings.html" class="nav-item">
+                <img src="../assets/icons/Nav/Green/SettingsGreen.svg" alt="Settings" class="nav-icon">
+            </a>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../js/explore.js"></script>
+</body>
+
+</html>

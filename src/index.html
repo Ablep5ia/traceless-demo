@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/global-styles/header.css">
+    <link rel="stylesheet" href="css/global-styles/nav.css">
+    <link rel="stylesheet" href="css/global-styles/colors.css">
+    <link rel="stylesheet" href="css/global-styles/fonts.css">
+    <title>Traceless</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="scrollable">
+            <div id="header">
+                <img src="assets/logo/LogoGreenSmallText.svg" alt="Icon" class="logo">
+            </div>
+
+            <div class="main">
+                <div class="flex-column">
+                    <h1>Current Emissions</h1>
+                    <div class="circle-container" id="circle-hidden-press-simulate">
+                        <svg class="circle" id="progress-circle" width="267" height="267" viewBox="0 0 267 267"
+                            xmlns="http://www.w3.org/2000/svg">
+
+                            <!-- Background Circle -->
+                            <circle cx="133.5" cy="133.5" r="120" stroke="#373737" stroke-width="24" fill="none" />
+
+                            <!-- Progress Circle -->
+                            <circle id="progress-ring" cx="133.5" cy="133.5" r="120" stroke="url(#gradient)"
+                                stroke-width="24" fill="none" stroke-linecap="round" stroke-dasharray="754"
+                                stroke-dashoffset="754" transform="rotate(-90 133.5 133.5)" />
+
+                            <!-- circle colors are defaulted here, changing in .js file instead -->
+                            <defs>
+                                <linearGradient id="gradient" x1="0" y1="0" x2="267" y2="267"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#43E476" />
+                                    <stop offset="50%" stop-color="#8EE156" />
+                                    <stop offset="100%" stop-color="#F7FF14" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+
+                        <div class="circle-data">
+                            <div id="circle-number">0 kg</div>
+                            <span class="circle-unit">CO<span class="sub">2</span></span>
+                        </div>
+                    </div>
+                </div>
+                <h2>Current Transport</h2>
+                <div class="transport">
+                    <button id="transport">
+                        <div class="transport-type flex-row">
+                            <img class="car" src="assets/icons/Vehicles/car/CarGray.svg">
+                            <div id="transport-type">car</div>
+                        </div>
+                        <div class="transport-value flex-row">
+                            <div id="transport-value">12 km</div>
+                            <img class="arrow-icon" src="assets/icons/Arrows/Gray/ArrowRightGray.svg">
+                        </div>
+                        <div id="transport-tagline">
+                            <h2 class="transport-tagline-text">Review current trip</h2>
+                            <img class="arrow-icon" src="assets/icons/Arrows/White/ArrowDownWhite.svg">
+                        </div>
+                    </button>
+                    <div id="transport-dropdown" class="dropdown">
+                        <ul class="transport-holder">
+                            <li class="flex-row">
+                                <div class="flex-row" style="gap: 1rem;">
+                                    <img class="car" src="assets/icons/Vehicles/car/CarWhite.svg">
+                                    <div class="transport-middle">
+                                        <div id="vehichle-type">
+                                            car
+                                        </div>
+                                        <div id="vehichle-time">
+                                            13:10 - 13:45
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="transport-end">12 km</div>
+                            </li>
+                            <li id="transport-type-change-holder" class="border">
+                                <button id="transport-type-change" class="transport-button">
+                                    <!-- i had to use inline here, too many classes -->
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        Change transport
+                                        <img class="arrow-icon"
+                                            src="assets/icons/Arrows/White/ArrowRightWhite.svg">
+                                    </div>
+                                    <ul id="transport-type-change-dropdown">
+                                        <li class="car-type-dropdown">
+                                            Petroleum car
+                                        </li>
+                                        <li class="car-type-dropdown">
+                                            Diesel car
+                                        </li>
+                                        <li class="car-type-dropdown">
+                                            Electric car
+                                        </li>
+                                        <li class="car-type-dropdown">
+                                            E-bike
+                                        </li>
+                                        <li class="car-type-dropdown">
+                                            Plane
+                                        </li>
+                                    </ul>
+                                </button>
+                            </li>
+                            <li class="flex-row confirm-buttons">
+                                <button
+                                    class="transport-button button-center-content border button-active button-discard">discard</button>
+                                <button
+                                    class="transport-button button-center-content accent-button button-active">save</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="nav">
+            <a href="index.html" class="nav-item">
+                <img src="assets/icons/Nav/Orange/HomeOrange.svg" alt="Home" class="nav-icon">
+            </a>
+            <a href="html/explore.html" class="nav-item">
+                <img src="assets/icons/Nav/Green/ExploreGreen.svg" alt="Explore" class="nav-icon">
+            </a>
+            <a href="html/plan.html" class="nav-item">
+                <img src="assets/icons/Nav/Green/CalculateGreen.svg" alt="Settings" class="nav-icon">
+            </a>
+            <a href="html/summary.html" class="nav-item">
+                <img src="assets/icons/Nav/Green/SummaryGreen.svg" alt="Settings" class="nav-icon">
+            </a>
+            <a href="html/settings.html" class="nav-item">
+                <img src="assets/icons/Nav/Green/SettingsGreen.svg" alt="Settings" class="nav-icon">
+            </a>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+    <script>
+        function trackOnce() {
+            if (!navigator.geolocation) {
+                alert("Geolocation not supported.");
+                return;
+            }
+
+            navigator.geolocation.getCurrentPosition(
+                (pos) => {
+                    alert(`Lat: ${pos.coords.latitude}\nLng: ${pos.coords.longitude}`);
+                },
+                (err) => {
+                    alert("Error: " + err.message);
+                },
+                {
+                    enableHighAccuracy: true,
+                    timeout: 10000,
+                    maximumAge: 0
+                }
+            );
+        }
+    </script>
+</body>
+
+</html>
