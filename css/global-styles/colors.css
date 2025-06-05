@@ -1,0 +1,15 @@
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/var */
+:root {
+  --primary-color: #00352d;
+  --primary-color-50: rgba(0,	53,	45, 0.5);
+  --secondary-color: #f5f2eb;
+  --neutral-color: #373737;
+  --neutral-color-20: rgba(55, 55, 55, 0.2);
+  --accent-color: #f47600;
+  --accent-color-50: rgba(244, 118,	0, 0.5);
+  --support-color-moss: #b6c578;
+  --support-color-leaf: #bacdb1;
+  --support-color-dark-green: #234d20;
+  --support-color-deep-forest: #234d20;
+  --support-color-smooth-dark-forest: #2B5246;
+}

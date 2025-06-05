@@ -1,0 +1,12 @@
+#header {
+  /* ADOPT LATER */
+  height: 140px;
+  width: 100vw;
+}
+
+.logo {
+  height: 80px; /* ADOPT LATER */
+  position: relative;
+  top:60px;
+  left: -5rem;
+}
